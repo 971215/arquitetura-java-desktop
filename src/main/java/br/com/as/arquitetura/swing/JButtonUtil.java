@@ -7,7 +7,7 @@ package br.com.as.arquitetura.swing;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.List;
+import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.border.BevelBorder;
@@ -23,17 +23,23 @@ public class JButtonUtil extends javax.swing.JButton {
 
     }
 
-    public static void estiliza(JButton button) {
+    public static void estiliza(List<JButton> buttons) {       
+    buttons.forEach(button -> estiliza(button));
+}
+        
+
+    
+    
+     private static void estiliza(JButton button) {
         button.setOpaque(true);
         button.setBackground(CollorConstants.BACKGROUND_DEFAULT_BUTTON);
         button.setForeground(CollorConstants.FOREGROUND_DEFAULT_BUTTON);
         button.setFont(new Font("Arial", Font.BOLD, 14));
         button.setBorder(BorderFactory.createLineBorder(Color.BLUE, 2));
         button.setFocusPainted(false);
-        button.setPreferredSize(new Dimension(120, 40)); // tamanho padronizado
-        button.setMinimumSize(new Dimension(120, 40)); // tamanho mínimo
-        button.setMaximumSize(new Dimension(120, 40)); // tamanho máximo        
-
+        button.setPreferredSize(new Dimension(273, 40)); // tamanho padronizado
+        button.setMinimumSize(new Dimension(273, 40)); // tamanho mínimo
+        button.setMaximumSize(new Dimension(273, 40)); // tamanho máximo        
         button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 button.setBackground(CollorConstants.FOREGROUND_DEFAULT_BUTTON);
