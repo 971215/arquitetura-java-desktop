@@ -10,27 +10,21 @@ import java.awt.Font;
 import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
-import javax.swing.border.BevelBorder;
-import javax.swing.border.Border;
 
-/**
- *
- * @author VIBE
- */
-public class JButtonUtil extends javax.swing.JButton {
+public class JButtonEstylize extends javax.swing.JButton {
 
-    public JButtonUtil() {
+    public JButtonEstylize() {
 
     }
 
-    public static void estiliza(List<JButton> buttons) {       
-    buttons.forEach(button -> estiliza(button));
+    private static void estiliza(List<JButton> buttons) {       
+    buttons.forEach(button -> estylize(button));
 }
         
 
     
     
-     private static void estiliza(JButton button) {
+     public static void estylize(JButton button) {
         button.setOpaque(true);
         button.setBackground(CollorConstants.BACKGROUND_DEFAULT_BUTTON);
         button.setForeground(CollorConstants.FOREGROUND_DEFAULT_BUTTON);

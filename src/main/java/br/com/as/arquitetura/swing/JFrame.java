@@ -4,12 +4,20 @@
  */
 package br.com.as.arquitetura.swing;
 
-/**
- *
- * @author VIBE
- */
-public class JFrame extends javax.swing.JFrame{
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JComponent;
+
+public abstract class JFrame extends javax.swing.JFrame{
+
+    private List<JComponent> components = new ArrayList<>();
     
+    public void addComponent(JComponent component ){
+        this.components.add(component);
+    }
     
+    public void estylize(){
+        ComponentTypeEstylize.estylize(components);
+    }
     
 }
